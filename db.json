@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "some comment",
+      "last_name": "some last"
+    },
+    {
+      "name": "Slobodan",
+      "last_name": "Perisic",
+      "email": "sloba@liverpool.com",
+      "country": "Serbia",
+      "password": "password",
+      "id": 2
+    },
+    {
+      "name": "Mohamed",
+      "last_name": "Salah",
+      "email": "salah@liverpool.com",
+      "country": "Egypt",
+      "password": "password",
+      "id": 3
+    }
+  ]
+}

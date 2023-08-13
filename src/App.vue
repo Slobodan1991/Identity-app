@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div id="app" class="flex">
+    <LeftBar v-if="hideSidebar" />
+    <router-view />
   </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import LeftBar from '@/components/LeftBar';
+export default {
+  name: 'App',
+  components: {
+    LeftBar
+  },
+  computed: {
+    hideSidebar() {
+      if (this.$route.name == 'login' || this.$route.name == 'register') {
+        return false
+      } else {
+        return true
+      }
+    }
+  }
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
+<style></style>
