@@ -1,15 +1,19 @@
 <template>
-    <div>
+    <div v-if="user">
         <div
             :class="isExpanded ? 'expanded shadow-2xl py-10 px-6 sidebar ease-in-out duration-700 transition-all' : 'shadow-2xl py-10 flex sidebar justify-center transition-all ease-in-out duration-700 collapsed px-4'">
             <div class="flex flex-col justify-between h-full">
                 <div class="w-full justify-center flex flex-col">
-                    <div class="flex justify-center gap-x-4 w-full tab">
-                        <Avatar class="cursor-pointer" size="small" />
-                        <div class="text-xs font-semibold font-poppins">
-                            <p>Slobodan P.</p>
-                            <p>Serbia</p>
+                    <div class="flex justify-center gap-x-4 w-full tab relative">
+                        <div @click="openMenu">
+                            <Avatar class="cursor-pointer" size="small" :firstName="user.name" :lastName="user.last_name" />
                         </div>
+                        <div class="text-xs font-semibold font-poppins">
+                            <p>{{ user.name }} {{ user.last_name.charAt(0) }}.</p>
+                            <p>{{ user.country }}</p>
+                            <p></p>
+                        </div>
+                        <DropdownMenu v-if="open" :user="user" />
                     </div>
                     <div class="my-6 h-[1px] bg-blue-800 w-full"></div>
                     <div class="flex flex-col gap-y-2">
@@ -91,6 +95,7 @@ import Settings from '@/assets/icons/Settings.vue';
 import Logout from '@/assets/icons/Logout.vue';
 import SocialProfiles from '@/assets/icons/SocialProfiles.vue'
 import DobuleArrowLeft from '@/assets/icons/DobuleArrowLeft.vue';
+import DropdownMenu from './DropdownMenu.vue';
 
 export default {
     name: 'LeftBar',
@@ -103,7 +108,8 @@ export default {
         Settings,
         Logout,
         SocialProfiles,
-        DobuleArrowLeft
+        DobuleArrowLeft,
+        DropdownMenu
     },
     data() {
         return {
@@ -135,11 +141,12 @@ export default {
             ],
             activeTab: 1,
             isExpanded: true,
-
+            open: false
         }
     },
     methods: {
         logout() {
+            localStorage.clear();
             this.$router.push({ name: 'login' })
         },
         goToPage(id, path) {
@@ -151,19 +158,28 @@ export default {
         },
         toggleSidebar() {
             this.isExpanded = !this.isExpanded
+        },
+        openMenu() {
+            this.open = !this.open
+        },
+    },
+    computed: {
+        user() {
+            const storedUser = localStorage.getItem('user')
+            return JSON.parse(storedUser);
         }
-    }
+    },
 }
 </script>
 <style scoped>
 .expanded {
     width: 250px;
-    overflow: hidden;
+    overflow: unset;
 }
 
 .collapsed {
     width: 90px;
-    overflow: hidden;
+    overflow: unset;
 }
 
 .collapsed p {
