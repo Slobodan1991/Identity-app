@@ -1,6 +1,9 @@
 <template>
     <div :class="computedAvatarClass + ' avatar'">
-        <img class="w-full h-full object-cover" src="../assets/images/profile.png" alt="profile">
+        <img v-if="avatarSrc" class="w-full h-full object-cover" :src="avatarSrc" alt="profile">
+        <div v-else class="text-center flex items-center justify-center font-semibold h-full text-[20px]">
+            {{ getInitial }}
+        </div>
     </div>
 </template>
 <script>
@@ -11,6 +14,19 @@ export default {
             type: String,
             default: 'medium',
             required: true
+        },
+        avatarSrc: {
+            type: URL
+        },
+        firstName: {
+            type: String,
+            default: '',
+            // required: true
+        },
+        lastName: {
+            type: String,
+            default: '',
+            // required: true
         }
     },
     computed: {
@@ -25,6 +41,9 @@ export default {
                 default:
                     return 'avatar-medium';
             }
+        },
+        getInitial() {
+            return this.firstName.charAt(0) + this.lastName.charAt(0)
         }
     }
 }
@@ -33,7 +52,7 @@ export default {
 .avatar {
     border-radius: 50%;
     background-color: white;
-    border: 1px solid;
+    border: 1px solid black;
     width: 100%;
     height: 100%;
     overflow: hidden;
