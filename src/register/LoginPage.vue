@@ -11,12 +11,14 @@
                         <p class="text-sm font-poppins text-gray-600">Enter your credentials to access your account</p>
                     </div>
                     <div class="flex flex-col gap-y-1 mt-4">
-                        <input v-model="email" type="email" class="border-b border-blue-800 h-10 outline-none"
+                        <input v-model="email" type="email"
+                            :class="error ? 'border-red-800 border-b-2 h-10 outline-none' : 'border-blue-800 border-b h-10 outline-none'"
                             placeholder="youremail@mail.com">
                         <label class="text-xs font-bold font-popins" for="email">Email</label>
                     </div>
                     <div class="flex flex-col gap-y-1">
-                        <input v-model="password" type="password" class="border-b border-blue-800 h-10 outline-none"
+                        <input v-model="password" type="password"
+                            :class="error ? 'border-red-800 border-b-2 h-10 outline-none' : 'border-blue-800 border-b h-10 outline-none'"
                             placeholder="Your password">
                         <label class="text-xs font-bold font-popins" for="password">Password</label>
                     </div>
@@ -27,6 +29,9 @@
                     <p class="text-sm text-center mt-6 font-popins font-bold">Don't have an account? <span
                             @click="goToRegister" class="text-blue-800 hover:text-blue-900 cursor-pointer">Register
                             here</span>
+                    </p>
+                    <p v-if="error" class="text-center w-full text-red-700 font-poppins">
+                        {{ error }}
                     </p>
                 </div>
             </div>
@@ -50,7 +55,8 @@ export default {
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            error: ''
         }
     },
     mounted() {
@@ -68,7 +74,10 @@ export default {
             console.log(result);
             if (result.status == 200 && result.data.length > 0) {
                 localStorage.setItem("user", JSON.stringify(result.data[0]))
-                this.$router.push({ name: 'profile' })
+                this.$store.dispatch('modal/openModal', { overlay: 'SUCCESS_LOGIN' })
+                // this.$router.push({ name: 'profile' })
+            } else {
+                this.error = 'Your password or email is not correct! Try again!'
             }
         }
     }

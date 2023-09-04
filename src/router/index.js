@@ -16,7 +16,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    beforeEnter: (to, from, next) => {
+      // Check if the user is authenticated
+      const isAuthenticated = localStorage.getItem('userLoggedIn') === 'true';
+      
+      if (isAuthenticated) {
+        // If authenticated, proceed to the home page
+        next();
+      } else {
+        // If not authenticated, redirect to the login page
+        next('/login');
+      }
+    }
   },
   {
     path: '/register',
