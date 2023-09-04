@@ -1,13 +1,13 @@
 <template>
-    <div class="w-full">
+    <div v-if="user" class="w-full">
         <!-- <div class="h-[200px] bg-blue-100 w-full relative">
             <Avatar class="absolute -bottom-[25%] left-10" size="large" />
         </div> -->
         <div class="px-10">
             <div class="mt-12 flex w-full items-center border-b border-gray-300 pb-2">
                 <div class="w-full">
-                    <h1 class="text-2xl font-poppins font-medium">Slobodan Perisic</h1>
-                    <p>Nova Pazova, Serbia</p>
+                    <h1 class="text-2xl font-poppins font-medium">{{ user.name }} {{ user.last_name }}</h1>
+                    <p>{{ user.country }}</p>
                 </div>
                 <div class="font-poppins font-semibold w-full">
                     <div
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <PersonalProfile v-if="tab.personal">
+        <PersonalProfile v-if="tab.personal" :user="user">
 
         </PersonalProfile>
         <div v-if="tab.business">
@@ -39,8 +39,9 @@
 <script>
 // import Avatar from '@/components/Avatar.vue'
 import PersonalProfile from '@/components/PersonalProfile.vue'
+
 export default {
-    name: 'SocialProfilesPage',
+    name: 'ProfilePage',
     components: {
         // Avatar,
         PersonalProfile
@@ -50,7 +51,14 @@ export default {
             tab: {
                 personal: true,
                 business: false
-            }
+            },
+            user: undefined,
+        }
+    },
+    mounted() {
+        let user = localStorage.getItem('user')
+        if (!user) {
+            this.$router.push({ name: 'login' })
         }
     },
     methods: {
@@ -62,8 +70,20 @@ export default {
                 this.tab.personal = false;
                 this.tab.business = true;
             }
+        },
+    },
+    computed: {
+        fetchUser() {
+            const storedUser = localStorage.getItem('user')
+            return JSON.parse(storedUser);
         }
-    }
+        ,
+    },
+    created() {
+        if (this.fetchUser) {
+            this.user = this.fetchUser
+        }
+    },
 }
 </script>
 <style scoped></style>

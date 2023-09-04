@@ -6,11 +6,11 @@
         </div> -->
         <div class="rounded-xl border border-gray-300 flex w-full">
             <div class="w-1/2 flex flex-col items-center bg-gray-200 p-4 card-left rounded-tl-xl rounded-bl-xl">
-                <Avatar size="medium" />
-                <h1 class="font-poppins mt-4 text-2xl font-normal text-black">Slobodan Perisic</h1>
+                <Avatar size="medium" :firstName="user.name" :lastName="user.last_name" />
+                <h1 class="font-poppins mt-4 text-2xl font-normal text-black">{{ user.name }} {{ user.last_name }}</h1>
                 <div class="flex mt-3 items-center gap-x-1">
                     <Location size="16px" class="fill-black" />
-                    <p class="text-sm text-black font-poppins">Nova Pazova, Serbia</p>
+                    <p class="text-sm text-black font-poppins">Nova Pazova, {{ user.country }}</p>
                 </div>
                 <div class="mt-8 mb-2 flex gap-x-5 w-fit px-3 justify-center">
                     <div @click="chageTab('contact')"
@@ -137,6 +137,12 @@ export default {
         Phone,
         Viber,
         Whatsup
+    },
+    props: {
+        user: {
+            type: Object,
+            reqired: true
+        }
     },
     data() {
         return {
