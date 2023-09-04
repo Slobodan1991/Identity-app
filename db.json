@@ -20,6 +20,54 @@
       "country": "Egypt",
       "password": "password",
       "id": 3
+    },
+    {
+      "name": "Erling ",
+      "last_name": "Haaland",
+      "email": "haaland@mancity.com",
+      "country": "Norway",
+      "password": "password",
+      "id": 4
+    },
+    {
+      "name": "Diogo",
+      "last_name": "Jota",
+      "email": "jota@mail.com",
+      "country": "Portugal",
+      "password": "pasasword",
+      "id": 5
+    },
+    {
+      "name": "Steven",
+      "last_name": "Gerrard",
+      "email": "stevengerrard@liverpool.com",
+      "country": "England",
+      "password": "password",
+      "id": 6
+    },
+    {
+      "name": "David",
+      "last_name": "Beckham",
+      "email": "davidbackham@miami.com",
+      "country": "United State of America",
+      "password": "password",
+      "id": 7
+    },
+    {
+      "name": "Ricardo",
+      "last_name": "Kaka",
+      "email": "kaka@mail.com",
+      "country": "Brasil",
+      "password": "password",
+      "id": 8
+    },
+    {
+      "name": "",
+      "last_name": "",
+      "email": "",
+      "country": "",
+      "password": "",
+      "id": 9
     }
   ]
 }
