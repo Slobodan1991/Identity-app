@@ -17,36 +17,36 @@
                     </div>
                     <div class="my-6 h-[1px] bg-blue-800 w-full"></div>
                     <div class="flex flex-col gap-y-2">
-                        <div @click="goToPage(1, 'profile')" :class="(activeTab === 1 ? 'bg-blue-300 rounded-lg' : '')"
+                        <div @click="goToPage(1, 'welcome')" :class="(activeTab === 1 ? 'bg-blue-300 rounded-lg' : '')"
                             class="flex items-center gap-x-2  hover:text-blue-800 cursor-pointer pl-4 py-2 hover:bg-blue-300 rounded-lg tab">
-                            <SocialProfiles size="20px" class="fill-blue-800" />
+                            <Welcome size="20px" class="fill-blue-800" />
                             <p class="text-blue-800 font-poppins hover:text-blue-800">
-                                Profile
+                                Welcome
                             </p>
                         </div>
-                        <div @click="goToPage(2, 'music')" :class="(activeTab === 2 ? 'bg-blue-300 rounded-lg' : '')"
+                        <div @click="goToPage(2, 'about-me')" :class="(activeTab === 2 ? 'bg-blue-300 rounded-lg' : '')"
                             class="flex items-center gap-x-2  hover:text-blue-800 cursor-pointer pl-4 py-2 hover:bg-blue-300 rounded-lg tab">
-                            <Music size="20px" class="fill-blue-800" />
+                            <About size="20px" class="fill-blue-800" />
                             <p class="text-blue-800 font-poppins">
-                                Music</p>
+                                About me</p>
                         </div>
-                        <div @click="goToPage(3, 'movies')" :class="(activeTab === 3 ? 'bg-blue-300 rounded-lg' : '')"
+                        <div @click="goToPage(3, 'experience')" :class="(activeTab === 3 ? 'bg-blue-300 rounded-lg' : '')"
                             class="flex items-center gap-x-2  hover:text-blue-800 cursor-pointer pl-4 py-2 hover:bg-blue-300 rounded-lg tab">
-                            <Movies size="20px" class="fill-blue-800" />
+                            <Experience size="20px" class="fill-blue-800" />
                             <p class="text-blue-800 font-poppins">
-                                Movies</p>
+                                My experience</p>
                         </div>
-                        <div @click="goToPage(4, 'books')" :class="(activeTab === 4 ? 'bg-blue-300 rounded-lg' : '')"
+                        <div @click="goToPage(4, 'service')" :class="(activeTab === 4 ? 'bg-blue-300 rounded-lg' : '')"
                             class="flex items-center gap-x-2  hover:text-blue-800 cursor-pointer pl-4 py-2 hover:bg-blue-300 rounded-lg tab">
-                            <Books size="20px" class="fill-blue-800" />
+                            <Services size="20px" class="fill-blue-800" />
                             <p class="text-blue-800 font-poppins">
-                                Books</p>
+                                Services</p>
                         </div>
-                        <div @click="goToPage(5, 'games')" :class="(activeTab === 5 ? 'bg-blue-300 rounded-lg' : '')"
+                        <div @click="goToPage(5, 'contact')" :class="(activeTab === 5 ? 'bg-blue-300 rounded-lg' : '')"
                             class="flex items-center gap-x-2 hover:text-blue-800 cursor-pointer pl-4 py-2 hover:bg-blue-300 rounded-lg tab">
-                            <Games size="20px" class="fill-blue-800" />
+                            <Contact size="20px" class="fill-blue-800" />
                             <p class="text-blue-800 font-poppins ">
-                                Games</p>
+                                Contact</p>
                         </div>
                     </div>
                 </div>
@@ -74,10 +74,10 @@
                         </div>
                         <div v-if="isExpanded" class="flex items-center justify-center mt-6 gap-x-2">
                             <p class="text-sm text-blue-800 font-poppins font-semibold">Made by</p>
-                            <span class="text-[1rem] font-semibold font-mono gradient-text">Identity</span>
+                            <span class="text-[1rem] font-semibold font-mono gradient-text">PS design</span>
                         </div>
                         <div v-else class="flex items-center justify-center mt-6 gap-x-2">
-                            <span class="text-[1rem] font-semibold font-mono gradient-text">I</span>
+                            <span class="text-[1rem] font-semibold font-mono gradient-text">PS</span>
                         </div>
                     </div>
                 </div>
@@ -86,14 +86,14 @@
     </div>
 </template>
 <script>
-import Music from '@/assets/icons/Music.vue';
+import About from '@/assets/icons/About.vue';
 import Avatar from './Avatar.vue';
-import Movies from '@/assets/icons/Movies.vue';
-import Books from '@/assets/icons/Books.vue';
-import Games from '@/assets/icons/Games.vue';
+import Experience from '@/assets/icons/Experience.vue';
+import Services from '@/assets/icons/Services.vue';
+import Contact from '@/assets/icons/Contact.vue';
 import Settings from '@/assets/icons/Settings.vue';
 import Logout from '@/assets/icons/Logout.vue';
-import SocialProfiles from '@/assets/icons/SocialProfiles.vue'
+import Welcome from '@/assets/icons/Welcome.vue'
 import DobuleArrowLeft from '@/assets/icons/DobuleArrowLeft.vue';
 import DropdownMenu from './DropdownMenu.vue';
 
@@ -101,13 +101,13 @@ export default {
     name: 'LeftBar',
     components: {
         Avatar,
-        Music,
-        Movies,
-        Books,
-        Games,
+        About,
+        Experience,
+        Services,
+        Contact,
         Settings,
         Logout,
-        SocialProfiles,
+        Welcome,
         DobuleArrowLeft,
         DropdownMenu
     },
@@ -116,23 +116,23 @@ export default {
             tab: [
                 {
                     id: 1,
-                    path: 'profile'
+                    path: 'welcome'
                 },
                 {
                     id: 2,
-                    path: 'music'
+                    path: 'about-me'
                 },
                 {
                     id: 3,
-                    path: 'movies'
+                    path: 'experiance'
                 },
                 {
                     id: 4,
-                    path: 'books'
+                    path: 'service'
                 },
                 {
                     id: 5,
-                    path: 'games'
+                    path: 'contact'
                 },
                 {
                     id: 6,

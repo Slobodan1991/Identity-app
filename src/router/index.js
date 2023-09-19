@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import RegisterPage from '../register/RegisterPage.vue'
 import LoginPage from '../register/LoginPage.vue'
-import ProfilePage from '../views/ProfilePage.vue'
-import MusicPage from '../views/MusicPage.vue'
-import MoviesPage from '../views/MoviesPage.vue'
-import GamesPage from '../views/GamesPage.vue'
-import BooksPage from '../views/BooksPage.vue'
+import WelcomePage from '../views/WelcomePage.vue'
+import AboutMePage from '../views/AboutMePage.vue'
+import ExperiencePage from '../views/ExperiencePage.vue'
+import ContactPage from '../views/ContactPage.vue'
+import ServicePage from '../views/ServicePage.vue'
 import SettingsPage from '../views/SettingsPage.vue'
 
 Vue.use(VueRouter)
@@ -41,29 +41,29 @@ const routes = [
     component: LoginPage
   },
   {
-    path: '/profile',
-    name: 'profile',
-    component: ProfilePage
+    path: '/welcome',
+    name: 'welcome',
+    component: WelcomePage
   },
   {
-    path: '/music',
-    name: 'music',
-    component: MusicPage
+    path: '/about-me',
+    name: 'about-me',
+    component: AboutMePage
   },
   {
-    path: '/movies',
-    name: 'movies',
-    component: MoviesPage
+    path: '/experience',
+    name: 'experience',
+    component: ExperiencePage
   },
   {
-    path: '/books',
-    name: 'books',
-    component: BooksPage
+    path: '/service',
+    name: 'service',
+    component: ServicePage
   },
   {
-    path: '/games',
-    name: 'games',
-    component: GamesPage
+    path: '/contact',
+    name: 'contact',
+    component: ContactPage
   },
   {
     path: '/settings',

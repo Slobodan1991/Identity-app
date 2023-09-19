@@ -1,9 +1,9 @@
 <template>
     <div class="flex items-center gap-x-2">
-        <div class="w-[3.25rem]">
+        <!-- <div class="w-[3.25rem]">
             <img class="w-full h-full" src="../images/logo/logo.png" alt="">
-        </div>
-        <p class="text-[3rem] font-semibold font-mono gradient-text">Identity</p>
+        </div> -->
+        <p class="text-[3rem] font-semibold font-mono gradient-text">Meet me</p>
     </div>
 </template>
 <script>

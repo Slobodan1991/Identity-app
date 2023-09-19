@@ -1,13 +1,16 @@
 <template >
-    <ModalLayout title="Succes login">
+    <ModalLayout title="Success login">
         <template #actions>
-            <div class="text-center">
-                Welcom to Identity
+            <div class="text-center text-xl font-mono mt-2">
+                Welcom to <span class="font-semibold font-mono gradient-text">My portfolio</span>
+            </div>
+            <div class="w-[500px] h-[400px] my-6">
+                <img class="w-full h-full object-fill" src="../../assets//images/registar//successfulLogin.jpg">
             </div>
         </template>
         <template #buttons>
             <div @click="goToApp" class="text-center">
-                <Button name="Okay" />
+                <Button color="w-full bg-blue-800 border-blue-800 border text-white hover:bg-blue-900" name="Okay" />
             </div>
         </template>
     </ModalLayout>
@@ -30,7 +33,7 @@ export default {
     methods: {
         goToApp() {
             this.$store.dispatch('modal/closeModal')
-            this.$router.push({ name: 'profile' })
+            this.$router.push({ name: 'welcome' })
         }
     }
 }

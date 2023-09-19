@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button :class="color + ' py-2 px-4 w-fit rounded-md text-base font-mono font-semibold cursor-pointer'">
+        <button :class="color + ' py-2 px-4 w-fit rounded-sm text-base font-mono font-semibold cursor-pointer'">
             {{ name }}
         </button>
     </div>

@@ -62,12 +62,28 @@
       "id": 8
     },
     {
-      "name": "",
-      "last_name": "",
-      "email": "",
-      "country": "",
-      "password": "",
+      "name": "Son",
+      "last_name": "Sonaldo",
+      "email": "son@mail.com",
+      "country": "South Korea",
+      "password": "password",
       "id": 9
+    },
+    {
+      "name": "Abudzabira",
+      "last_name": "Dzaleburazibabe",
+      "email": "abudza@mail.com",
+      "country": "Nigeria",
+      "password": "password",
+      "id": 10
+    },
+    {
+      "name": "Philip",
+      "last_name": "Foden",
+      "email": "foden@mail.com",
+      "country": "England",
+      "password": "password",
+      "id": 11
     }
   ]
 }

@@ -63,7 +63,7 @@ export default {
 }
 
 .overlay-wrapper {
-    background-color: rgba(248, 248, 248, 0.7);
+    background-color: rgba(30, 64, 175, 0.5);
     position: fixed;
     left: 0;
     top: 0;

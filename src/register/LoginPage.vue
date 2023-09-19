@@ -7,19 +7,19 @@
                 </div>
                 <div class="mt-8 flex flex-col gap-y-4">
                     <div>
-                        <h2 class="font-mono text-[1.5rem] font-semibold mt-4">Login to your Identity account</h2>
+                        <h2 class="font-mono text-[1.5rem] font-semibold mt-4">Login to visit my portfolio. Jump in!</h2>
                         <p class="text-sm font-poppins text-gray-600">Enter your credentials to access your account</p>
                     </div>
                     <div class="flex flex-col gap-y-1 mt-4">
                         <input v-model="email" type="email"
                             :class="error ? 'border-red-800 border-b-2 h-10 outline-none' : 'border-blue-800 border-b h-10 outline-none'"
-                            placeholder="youremail@mail.com">
+                            placeholder="youremail@mail.com" required>
                         <label class="text-xs font-bold font-popins" for="email">Email</label>
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <input v-model="password" type="password"
                             :class="error ? 'border-red-800 border-b-2 h-10 outline-none' : 'border-blue-800 border-b h-10 outline-none'"
-                            placeholder="Your password">
+                            placeholder="Your password" required>
                         <label class="text-xs font-bold font-popins" for="password">Password</label>
                     </div>
                     <div class="w-full mt-4" @click="login">
@@ -62,7 +62,7 @@ export default {
     mounted() {
         let user = localStorage.getItem('user');
         if (user) {
-            this.$router.push({ name: 'profile' })
+            this.$router.push({ name: 'welcome' })
         }
     },
     methods: {

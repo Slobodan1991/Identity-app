@@ -77,7 +77,7 @@ export default {
     mounted() {
         let user = localStorage.getItem('user');
         if (user) {
-            this.$router.push({ name: 'profile' })
+            this.$router.push({ name: 'welcome' })
         }
     },
     methods: {
@@ -94,7 +94,7 @@ export default {
             });
             if (result.status == 201) {
                 localStorage.setItem("user", JSON.stringify(result.data))
-                this.$router.push({ name: 'profile' })
+                this.$router.push({ name: 'welcome' })
             }
         }
 
