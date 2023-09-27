@@ -84,6 +84,14 @@
       "country": "England",
       "password": "password",
       "id": 11
+    },
+    {
+      "name": "Harry",
+      "last_name": "Potter",
+      "email": "potter@mail.com",
+      "country": "United State of America",
+      "password": "password",
+      "id": 12
     }
   ]
 }
