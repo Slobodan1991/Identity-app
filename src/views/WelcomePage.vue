@@ -8,24 +8,6 @@
                     </h1>
                     <p>Thanks for coming to visit my portfolio. Keep going!</p>
                 </div>
-
-                <!-- <div class="font-poppins font-semibold w-full">
-                    <div
-                    class="flex justify-center items-center border border-gray-300 rounded-full p-1 w-fit gap-x-3 relative">
-                        <div
-                            :class="(tab.personal ? 'text-blue-800 rounded-full' : '') + ' w-fit flex justify-center py-1 px-2'">
-                            <p @click="chageTab('personal')" class="cursor-pointer">Personal profile</p>
-                        </div>
-                        <div
-                            :class="(tab.business ? 'bg-gray-200 text-blue-800 rounded-full' : '') + ' w-fit flex justify-center py-1 px-2'">
-                            <p @click="chageTab('business')" class="cursor-pointer">Business profile</p>
-                        </div>
-                        <div
-                            :class="tab.personal ? 'absolute py-1 px-2 h-8 rounded-full w-[140px] z-[-1] left-[4px] bg-gray-200' : 'right-[4px] absolute'">
-
-                        </div>
-                    </div>
-                </div> -->
             </div>
             <div class="mt-6 flex w-full">
                 <div
