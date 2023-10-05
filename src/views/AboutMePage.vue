@@ -10,6 +10,37 @@
             </div>
             <div class="flex gap-x-5">
                 <div class="mt-6 flex-col gap-5 w-1/2">
+                    <div
+                        class="text-lg mb-5 font-poppins w-full h-fit gap-x-5 flex flex-col gap-y-2 border border-gray-300 rounded-lg py-5 px-6 shadow-lg">
+                        <div>
+                            <p class="font-poppins font-semibold">Personal details</p>
+                            <div class="h-1 gradient-bg w-[17%] rounded-full"></div>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Name:</p>
+                            <p>Slobodan</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Birthday:</p>
+                            <p>24.09.1991.</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Location:</p>
+                            <p>Nova Pazova, Serbia</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Job:</p>
+                            <p>Frontend developer</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Lannguages:</p>
+                            <p>Serbian, English , Germany</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Hobby:</p>
+                            <p>Football, Basketball, Tennis, Swimming</p>
+                        </div>
+                    </div>
                     <div class="flex gap-x-5">
                         <div
                             class="text-base font-poppins w-full h-fit gap-x-5 hover:scale-105 duration-105 cursor-pointer hover:bg-gray-100 transition-all flex flex-col gap-y-2 border border-gray-300 rounded-lg py-5 px-6 shadow-lg justify-center items-center">
