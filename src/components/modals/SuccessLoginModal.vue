@@ -1,8 +1,8 @@
 <template >
     <ModalLayout title="Success login">
         <template #actions>
-            <div class="text-center text-xl font-mono mt-2">
-                Welcom to <span class="font-semibold font-mono gradient-text">My portfolio</span>
+            <div class="text-center text-xl font-poppins mt-2">
+                Welcom to <span class="font-semibold font-poppins gradient-text">My portfolio</span>
             </div>
             <div class="w-[500px] h-[400px] my-6">
                 <img class="w-full h-full object-fill" src="../../assets//images/registar//successfulLogin.jpg">

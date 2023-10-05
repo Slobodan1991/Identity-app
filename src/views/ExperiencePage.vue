@@ -15,7 +15,7 @@
                         <h1 class="mb-5 font-poppins gradient-text font-semibold text-xl">Frontend skills</h1>
                         <div class="w-full flex flex-wrap justify-center">
                             <div v-for="(skill, index) in frontendSkills" :key="index"
-                                class="flex items-center flex-col mb-5 gap-y-1 p-3 w-[25%]">
+                                class="flex items-center flex-col mb-5 gap-y-1 border border-transparent p-3 w-[25%] hover:border hover:rounded-sm hover:border-blue-800">
                                 <div class="icon-size" v-html="skill.icon"></div>
                                 <p class="gradient-text font-semibold font-poppins text-lg my-1">{{ skill.name }}</p>
                                 <p class="text-sm font-normal font-poppins text-gray-500">{{ skill.level }}</p>
@@ -29,7 +29,7 @@
                         <h1 class="mb-5 font-poppins gradient-text font-semibold text-xl">Other skills</h1>
                         <div class="w-full flex flex-wrap justify-center">
                             <div v-for="(skill, index) in otherSkills" :key="index"
-                                class="flex items-center flex-col mb-5 gap-y-1 p-3 w-[25%]">
+                                class="flex items-center flex-col mb-5 gap-y-1 border border-transparent p-3 w-[25%] hover:border hover:rounded-sm hover:border-blue-800">
                                 <div v-html="skill.icon"></div>
                                 <p class="gradient-text font-semibold font-poppins text-lg my-1">{{ skill.name }}</p>
                                 <p class="text-sm font-normal font-poppins text-gray-500">{{ skill.level }}</p>

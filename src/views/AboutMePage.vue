@@ -33,7 +33,7 @@
                 </div>
                 <div class="mt-6 flex w-1/2">
                     <div
-                        class="bg-[url('../assets/images/bg-profile.jpg')] bg-no-repeat bg-center bg-cover text-base font-poppins w-full h-fit gap-x-5 flex flex-col gap-y-2 border py-5 px-6 shadow-lg justify-center items-center rounded-lg">
+                        class="bg-[url('../assets/images/bg-profile-gray.jpg')] bg-no-repeat bg-center bg-cover text-base font-poppins w-full h-fit gap-x-5 flex flex-col gap-y-2 border py-5 px-6 shadow-lg justify-center items-center rounded-lg">
                         <div class="w-[200px] h-[220px] object-fill border-b border-gray-900 pb-4 ">
                             <img class="w-full h-full " src="../assets/images/profile.png" alt="profile">
                         </div>

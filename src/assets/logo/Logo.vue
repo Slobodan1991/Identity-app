@@ -19,4 +19,11 @@ export default {
     background-image: linear-gradient(315deg, #009ffd 0%, #2a2a72 74%);
 
 }
+
+.gradient-bg {
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #009ffd 0%, #2a2a72 74%);
+}
 </style>
