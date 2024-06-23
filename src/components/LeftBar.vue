@@ -18,37 +18,37 @@
                     <div class="my-6 h-[1px] bg-black w-full"></div>
                     <div class="flex flex-col gap-y-2">
                         <div @click="goToPage(1, 'welcome')"
-                            :class="(activeTab === 1 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            :class="(activeTab === 1 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <Welcome size="20px" />
                             <p class="font-poppins hover:text-white">
                                 Welcome
                             </p>
                         </div>
                         <div @click="goToPage(2, 'about-me')"
-                            :class="(activeTab === 2 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            :class="(activeTab === 2 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <About size="20px" />
                             <p class="font-poppins">
                                 About me</p>
                         </div>
                         <div @click="goToPage(3, 'experience')"
-                            :class="(activeTab === 3 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            :class="(activeTab === 3 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <Experience size="20px" />
                             <p class="font-poppins">
                                 My experience</p>
                         </div>
                         <div @click="goToPage(4, 'service')"
-                            :class="(activeTab === 4 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            :class="(activeTab === 4 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2  hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <Services size="20px" />
                             <p class="font-poppins">
                                 Services</p>
                         </div>
                         <div @click="goToPage(5, 'contact')"
-                            :class="(activeTab === 5 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            :class="(activeTab === 5 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <Contact size="20px" />
                             <p class="font-poppins ">
                                 Contact</p>
@@ -63,19 +63,18 @@
                     </div>
                     <div>
                         <div @click="goToPage(6, 'settings')"
-                            :class="(activeTab === 6 ? 'bg-blue-500 rounded-lg text-white fill-white' : '')"
-                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white my-2">
+                            :class="(activeTab === 6 ? 'bg-blue-700 rounded-md text-white fill-white' : '')"
+                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white my-2">
                             <Settings size="20px" />
                             <p v-if="isExpanded" class="font-poppins cursor-pointer">
                                 Settings
                             </p>
                         </div>
                         <div @click="logout"
-                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-500 rounded-lg tab hover:fill-white">
+                            class="flex items-center gap-x-2 hover:text-white cursor-pointer pl-4 py-2 hover:bg-blue-700 rounded-md tab hover:fill-white">
                             <Logout size="20px" />
                             <p class="font-poppins cursor-pointer">
-                                Log
-                                Out
+                                Log Out
                             </p>
                         </div>
                         <div v-if="isExpanded" class="flex items-center justify-center mt-6 gap-x-2">

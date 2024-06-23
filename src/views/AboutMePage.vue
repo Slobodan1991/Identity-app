@@ -21,12 +21,20 @@
                             <p>Slobodan</p>
                         </div>
                         <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Last name:</p>
+                            <p>Perišić</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
                             <p class="font-semibold">Birthday:</p>
                             <p>24.09.1991.</p>
                         </div>
                         <div class="flex gap-x-2 font-poppins text-sm mt-2">
                             <p class="font-semibold">Location:</p>
                             <p>Nova Pazova, Serbia</p>
+                        </div>
+                        <div class="flex gap-x-2 font-poppins text-sm mt-2">
+                            <p class="font-semibold">Phone number:</p>
+                            <p>+381 60 324 99 91</p>
                         </div>
                         <div class="flex gap-x-2 font-poppins text-sm mt-2">
                             <p class="font-semibold">Job:</p>
@@ -46,21 +54,21 @@
                             class="text-base font-poppins w-full h-fit gap-x-5 hover:scale-105 duration-105 cursor-pointer hover:bg-gray-100 transition-all flex flex-col gap-y-2 border border-gray-300 rounded-lg py-5 px-6 shadow-lg justify-center items-center">
                             <Laptop size="30px" />
                             <p>Experience</p>
-                            <p>2+ Year Working</p>
+                            <p>3+ Year Working</p>
                         </div>
                         <div
                             class="text-base font-poppins w-full h-fit gap-x-5 hover:scale-105 duration-105 cursor-pointer hover:bg-gray-100 transition-all flex flex-col gap-y-2 border border-gray-300 rounded-lg py-5 px-6 shadow-lg justify-center items-center">
                             <Projects size="30px" />
                             <p>Projects</p>
-                            <p>10+ Completed</p>
+                            <p>15+ Completed</p>
                         </div>
                     </div>
-                    <div
+                    <!-- <div
                         class="text-base mt-5 font-poppins w-full h-fit gap-x-5 hover:scale-105 duration-105 cursor-pointer hover:bg-gray-100 transition-all flex flex-col gap-y-2 border border-gray-300 rounded-lg py-5 px-6 shadow-lg justify-center items-center">
                         <Skills size="30px" />
                         <p>Skills</p>
                         <p>JavaScript, HTML, CSS, Vue...</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="mt-6 flex w-1/2">
                     <div
@@ -76,7 +84,8 @@
                         <p class="mt-4">Hello everyone, my name is Slobodan. I have two year of experience with frontend
                             development. My
                             favorite
-                            tools are Visual Studio Code, React, JavaScript, CSS, HTML, Bootstrap. I love programming and I
+                            tools are Visual Studio Code, React, JavaScript, CSS, HTML, Bootstrap. I love programming
+                            and I
                             have
                             a
                             desire for further improvement!</p>
@@ -98,7 +107,6 @@ import Instagram from '@/assets/icons/Instagram.vue';
 import Location from '@/assets/icons/Location.vue';
 import Laptop from '@/assets/icons/Laptop.vue';
 import Projects from '@/assets/icons/Projects.vue';
-import Skills from '@/assets/icons/Skills.vue';
 
 export default {
     name: 'AboutMePage',
@@ -109,7 +117,6 @@ export default {
         Location,
         Laptop,
         Projects,
-        Skills
     },
 }
 </script>

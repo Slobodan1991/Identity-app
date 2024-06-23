@@ -94,7 +94,8 @@ export default {
             });
             if (result.status == 201) {
                 localStorage.setItem("user", JSON.stringify(result.data))
-                this.$router.push({ name: 'welcome' })
+                // this.$router.push({ name: 'welcome' })
+                this.$store.dispatch('modal/openModal', { overlay: 'SUCCESS_REGISTRATION' })
             }
         }
 

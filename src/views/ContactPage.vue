@@ -37,7 +37,7 @@
                                 <p class="font-semibold text-base">Phone number</p>
                             </div>
                             <p class="text-sm border-b border-gray-300 pb-3 w-full">+381 60 324 99 91</p>
-                            <Button name="Send a message" color="text-blue-700" />
+                            <Button name="Call me" color="text-blue-700" />
                         </div>
                     </div>
                 </div>

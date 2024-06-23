@@ -4,7 +4,7 @@
             <div class="mt-12 flex w-full items-center border-b border-gray-300 pb-2">
                 <div class="w-full">
                     <h1 class="text-2xl font-poppins font-medium">Welcome, <span class="gradient-text">{{ user.name
-                    }}!</span>
+                            }}!</span>
                     </h1>
                     <p>Thanks for coming to visit my portfolio. Keep going!</p>
                 </div>
@@ -25,7 +25,8 @@
                             <p class=" my-4">Over the last years, I have successfuly participated
                                 in a
                                 lot of project coding highly
-                                functionl interace for a web, desktop, and mobile applications across multiple industries.
+                                functionl interace for a web, desktop, and mobile applications across multiple
+                                industries.
                             </p>
                             <p class=" mt-4">Need any help?</p>
                         </div>
@@ -88,7 +89,6 @@ export default {
             const storedUser = localStorage.getItem('user')
             return JSON.parse(storedUser);
         }
-        ,
     },
     created() {
         if (this.fetchUser) {

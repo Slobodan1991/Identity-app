@@ -10,9 +10,11 @@
 <script>
 import { mapGetters } from 'vuex';
 import SuccessLoginModal from './modals/SuccessLoginModal.vue';
+import SuccessRegistrationModal from './modals/SuccessRegistrationModal.vue';
 
 const overlayList = {
-    'SUCCESS_LOGIN': SuccessLoginModal
+    'SUCCESS_LOGIN': SuccessLoginModal,
+    'SUCCESS_REGISTRATION': SuccessRegistrationModal
 }
 export default {
     name: 'Modal',
@@ -79,7 +81,7 @@ export default {
     background-color: #fff;
     height: auto;
     min-height: 150px;
-    padding: 60px 52px 60px 60px;
+    /* padding: 60px 52px 60px 60px; */
     border-radius: 10px;
     position: absolute;
     top: 50%;
