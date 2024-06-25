@@ -40,6 +40,15 @@
           <Notes />
         </div>
       </div>
+      <div class="flex gap-x-5" v-else>
+        <div class="flex flex-col w-1/3">
+          <Notifications />
+        </div>
+        <div class="flex flex-col w-1/3">
+          <Password />
+          <DeleteAccount />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +59,9 @@ import Skills from "@/components/Skills";
 import Personality from "@/components/Personality";
 import Notes from "@/components/Notes";
 import PersonalInfo from "@/components/PersonalInfo";
+import Password from "@/components/Password";
+import DeleteAccount from "@/components/DeleteAccount";
+import Notifications from "@/components/Notifications";
 
 export default {
   name: "SettingsPage",
@@ -60,6 +72,9 @@ export default {
     Personality,
     Notes,
     PersonalInfo,
+    Password,
+    DeleteAccount,
+    Notifications,
   },
   data() {
     return {
