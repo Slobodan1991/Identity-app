@@ -1,23 +1,14 @@
 <template>
   <div v-if="user">
-    <div
-      :class="
-        isExpanded
-          ? 'expanded shadow-2xl py-10 px-6 sidebar ease-in-out duration-700 transition-all'
-          : 'shadow-2xl py-10 flex sidebar justify-center transition-all ease-in-out duration-700 collapsed px-4'
-      "
-    >
+    <div :class="isExpanded
+    ? 'expanded shadow-2xl py-10 px-6 sidebar ease-in-out duration-700 transition-all'
+    : 'shadow-2xl py-10 flex sidebar justify-center transition-all ease-in-out duration-700 collapsed px-4'
+    ">
       <div class="flex flex-col justify-between h-full">
         <div class="flex flex-col justify-center w-full">
           <div class="relative flex justify-center w-full gap-x-4 tab">
             <div @click="openMenu">
-              <Avatar
-                class="cursor-pointer"
-                size="small"
-                avatarSrc="https://ichef.bbci.co.uk/news/1024/branded_sport/6A18/production/_127606172_gettyimages-1243553608.jpg"
-                :firstName="user.name"
-                :lastName="user.last_name"
-              />
+              <Avatar class="cursor-pointer" size="small" :firstName="user.name" :lastName="user.last_name" />
             </div>
             <div class="text-xs font-semibold font-poppins">
               <p>{{ user.name }} {{ user.last_name.charAt(0) }}.</p>
@@ -28,63 +19,38 @@
           </div>
           <div class="my-6 h-[1px] bg-black w-full"></div>
           <div class="flex flex-col gap-y-2">
-            <div
-              @click="goToPage(1, 'welcome')"
-              :class="
-                activeTab === 1
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(1, 'welcome')" :class="activeTab === 1
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Welcome size="20px" />
               <p class="font-poppins hover:text-white">Welcome</p>
             </div>
-            <div
-              @click="goToPage(2, 'about-me')"
-              :class="
-                activeTab === 2
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(2, 'about-me')" :class="activeTab === 2
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <About size="20px" />
               <p class="font-poppins">About me</p>
             </div>
-            <div
-              @click="goToPage(3, 'experience')"
-              :class="
-                activeTab === 3
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(3, 'experience')" :class="activeTab === 3
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Experience size="20px" />
               <p class="font-poppins">My experience</p>
             </div>
-            <div
-              @click="goToPage(4, 'service')"
-              :class="
-                activeTab === 4
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(4, 'service')" :class="activeTab === 4
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Services size="20px" />
               <p class="font-poppins">Services</p>
             </div>
-            <div
-              @click="goToPage(5, 'contact')"
-              :class="
-                activeTab === 5
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(5, 'contact')" :class="activeTab === 5
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Contact size="20px" />
               <p class="font-poppins">Contact</p>
             </div>
@@ -92,51 +58,33 @@
         </div>
         <div class="flex flex-col">
           <div class="my-6 h-[1px] bg-black w-full"></div>
-          <div
-            :class="
-              isExpanded
-                ? 'text-xs flex justify-start rotate-180'
-                : 'text-xs flex justify-end'
-            "
-            @click="toggleSidebar"
-          >
+          <div :class="isExpanded
+    ? 'text-xs flex justify-start rotate-180'
+    : 'text-xs flex justify-end'
+    " @click="toggleSidebar">
             <DobuleArrowLeft size="12px" />
           </div>
           <div>
-            <div
-              @click="goToPage(6, 'settings')"
-              :class="
-                activeTab === 6
-                  ? 'bg-blue-800 rounded-md text-white fill-white'
-                  : ''
-              "
-              class="flex items-center py-2 pl-4 my-2 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="goToPage(6, 'settings')" :class="activeTab === 6
+    ? 'bg-blue-800 rounded-md text-white fill-white'
+    : ''
+    " class="flex items-center py-2 pl-4 my-2 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Settings size="20px" />
               <p v-if="isExpanded" class="cursor-pointer font-poppins">
                 Settings
               </p>
             </div>
-            <div
-              @click="logout"
-              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white"
-            >
+            <div @click="logout"
+              class="flex items-center py-2 pl-4 rounded-md cursor-pointer gap-x-2 hover:text-white hover:bg-blue-800 tab hover:fill-white">
               <Logout size="20px" />
               <p class="cursor-pointer font-poppins">Log Out</p>
             </div>
-            <div
-              v-if="isExpanded"
-              class="flex items-center justify-center mt-6 gap-x-2"
-            >
+            <div v-if="isExpanded" class="flex items-center justify-center mt-6 gap-x-2">
               <p class="text-sm font-semibold font-poppins">Made by</p>
-              <span class="text-[1rem] font-semibold font-mono gradient-text"
-                >PS design</span
-              >
+              <span class="text-[1rem] font-semibold font-mono gradient-text">PS design</span>
             </div>
             <div v-else class="flex items-center justify-center mt-6 gap-x-2">
-              <span class="text-[1rem] font-semibold font-mono gradient-text"
-                >PS</span
-              >
+              <span class="text-[1rem] font-semibold font-mono gradient-text">PS</span>
             </div>
           </div>
         </div>
@@ -234,11 +182,13 @@ export default {
 .expanded {
   width: 250px;
   overflow: unset;
+  position: sticky;
 }
 
 .collapsed {
   width: 90px;
   overflow: unset;
+  position: sticky;
 }
 
 .collapsed p {

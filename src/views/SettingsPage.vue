@@ -1,56 +1,46 @@
 <template>
-  <div class="w-full">
-    <div class="px-10">
-      <div class="flex items-center w-full pb-2 mt-12 border-b border-gray-300">
-        <div class="w-full">
-          <h1 class="text-2xl font-medium font-poppins">Settings</h1>
-          <p>Personalize your profile or edit your information!</p>
-        </div>
-      </div>
-      <div
-        :class="['text-center', 'tab-switch', direction]"
-        class="max-w-[400px] mt-6 wrapper"
-      >
-        <div
-          class="tab"
-          :class="{ active: isActive('left') }"
-          @click="switchTab('left')"
-        >
-          Personal settings
-        </div>
-        <div
-          class="tab"
-          :class="{ active: isActive('right') }"
-          @click="switchTab('right')"
-        >
-          Account settings
-        </div>
-      </div>
-      <div v-if="activeDirection == 'left'" class="flex gap-x-5">
-        <div class="flex flex-col w-1/3">
-          <PersonalInfo :profile="fetchUser" />
-        </div>
-        <div class="flex flex-col w-1/3">
-          <Bio />
-          <Personality />
-        </div>
-        <div class="flex flex-col w-1/3">
-          <Skills />
-          <SocialMedia />
-          <Notes />
-        </div>
-      </div>
-      <div class="flex gap-x-5" v-else>
-        <div class="flex flex-col w-1/3">
-          <Notifications />
-        </div>
-        <div class="flex flex-col w-1/3">
-          <Password />
-          <DeleteAccount />
-        </div>
+
+  <Layout>
+
+    <div class="flex items-center w-full pb-2 mt-12 border-b border-gray-300">
+      <div class="w-full">
+        <h1 class="text-2xl font-medium font-poppins">Settings</h1>
+        <p>Personalize your profile or edit your information!</p>
       </div>
     </div>
-  </div>
+    <div :class="['text-center', 'tab-switch', direction]" class="max-w-[400px] mt-6 wrapper">
+      <div class="tab" :class="{ active: isActive('left') }" @click="switchTab('left')">
+        Personal settings
+      </div>
+      <div class="tab" :class="{ active: isActive('right') }" @click="switchTab('right')">
+        Account settings
+      </div>
+    </div>
+    <div v-if="activeDirection == 'left'" class="flex gap-x-5">
+      <div class="flex flex-col w-1/3">
+        <PersonalInfo :profile="fetchUser" />
+      </div>
+      <div class="flex flex-col w-1/3">
+        <Bio />
+        <Personality />
+      </div>
+      <div class="flex flex-col w-1/3">
+        <Skills />
+        <SocialMedia />
+        <Notes />
+      </div>
+    </div>
+    <div class="flex gap-x-5" v-else>
+      <div class="flex flex-col w-1/2">
+        <Notifications />
+      </div>
+      <div class="flex flex-col w-1/2">
+        <Password />
+        <DeleteAccount />
+      </div>
+    </div>
+  </Layout>
+
 </template>
 <script>
 import SocialMedia from "@/components/SocialMedia";
@@ -62,6 +52,7 @@ import PersonalInfo from "@/components/PersonalInfo";
 import Password from "@/components/Password";
 import DeleteAccount from "@/components/DeleteAccount";
 import Notifications from "@/components/Notifications";
+import Layout from "@/components/Layout";
 
 export default {
   name: "SettingsPage",
@@ -75,6 +66,7 @@ export default {
     Password,
     DeleteAccount,
     Notifications,
+    Layout
   },
   data() {
     return {
@@ -155,6 +147,7 @@ export default {
 .text-center {
   text-align: center;
 }
+
 .wrapper {
   border-radius: 37px;
   background-color: #f4f4f4;

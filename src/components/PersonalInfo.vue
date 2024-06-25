@@ -1,15 +1,12 @@
 <template>
   <div class="flex mt-6">
     <div
-      class="flex flex-col w-full px-6 py-5 text-base border border-gray-300 rounded-lg shadow-lg font-poppins h-fit gap-x-5 gap-y-2"
-    >
+      class="flex flex-col w-full px-6 py-5 text-base border border-gray-300 rounded-lg shadow-lg font-poppins h-fit gap-x-5 gap-y-2">
       <div class="flex self-end cursor-pointer w-fit">
         <Edit class="cursor-pointer hover:stroke-blue-800" size="20" />
       </div>
       <div class="flex flex-col items-center justify-center text-center">
-        <Avatar
-          avatarSrc="https://ichef.bbci.co.uk/news/1024/branded_sport/6A18/production/_127606172_gettyimages-1243553608.jpg"
-        />
+        <Avatar :firstName="profile.name" :lastName="profile.last_name" />
         <p class="mt-2 text-lg font-semibold">
           {{ profile.name }} {{ profile.last_name }}
         </p>

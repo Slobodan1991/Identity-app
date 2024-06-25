@@ -1,6 +1,6 @@
 <template>
-    <div class="p-8">
-
+    <div class="px-10 pb-10 overflow-y-auto w-full">
+        <slot></slot>
     </div>
 </template>
 <script>
