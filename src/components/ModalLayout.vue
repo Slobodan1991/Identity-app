@@ -1,17 +1,11 @@
 <template>
-  <div :class="`min-w-[440px] py-6 p-6 ${customClass}`">
-    <div>
+  <div :class="`min-w-[440px] ${customClass}`">
+    <!-- <div>
       <img v-if="imgSrc" :src="imgSrc" alt="image" class="mx-auto" />
       <slot v-else name="svg"></slot>
-    </div>
-    <div class="flex py-2">
-      <p
-        v-if="title"
-        :class="
-          'text-lg font-poppins text-blue-800 font-bold w-fit mx-auto ' +
-          (imgSrc ? 'mt-4' : '')
-        "
-      >
+    </div> -->
+    <div class="flex py-6 bg-gray-300">
+      <p v-if="title" class="text-lg font-poppins text-blue-800 font-bold w-fit mx-auto">
         {{ title }}
       </p>
       <div v-if="closeBtn">
@@ -22,7 +16,7 @@
       {{ text }}
     </p>
     <slot name="actions"></slot>
-    <div class="mx-auto mt-4">
+    <div class="mx-auto">
       <slot name="buttons"></slot>
     </div>
 

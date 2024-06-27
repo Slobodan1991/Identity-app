@@ -2,10 +2,7 @@
   <transition name="modal">
     <div v-if="opened" class="overlay-wrapper">
       <div :class="customClass" class="custom-overlay">
-        <component
-          :is="currentOverlayComponent"
-          :propData="currentProperties"
-        />
+        <component :is="currentOverlayComponent" :propData="currentProperties" />
       </div>
     </div>
   </transition>
@@ -77,10 +74,11 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 10040;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
 }
 
 .custom-overlay {
+  overflow: hidden;
   width: fit-content;
   box-shadow: 0px 0px 5px 0px #00000026;
   background-color: #fff;

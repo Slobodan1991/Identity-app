@@ -6,7 +6,7 @@
         <Edit class="cursor-pointer hover:stroke-blue-800" size="20" />
       </div>
       <div class="flex flex-col items-center justify-center text-center">
-        <Avatar :firstName="profile.name" :lastName="profile.last_name" />
+        <Avatar :firstName="profile.name" :lastName="profile.last_name" size="medium" />
         <p class="mt-2 text-lg font-semibold">
           {{ profile.name }} {{ profile.last_name }}
         </p>

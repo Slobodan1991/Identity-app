@@ -3,28 +3,17 @@
     <template #actions>
       <!-- <div class="mt-2 text-xl text-center font-poppins">Edit bio</div> -->
       <div class="w-full pb-0">
-        <textarea
-          v-model="bio"
-          class="w-full min-h-[200px] p-2 border border-blue-800 rounded-sm"
-          name="message"
-          id=""
-        >
+        <textarea v-model="bio" class="w-full min-h-[200px] p-2 border border-blue-800 rounded-sm" name="message" id="">
         </textarea>
       </div>
     </template>
     <template #buttons>
-      <div class="flex justify-end pt-6 border-t gap-x-3">
+      <div class="flex justify-end border-t gap-x-3">
         <div @click="cancel" class="text-center">
-          <Button
-            color="w-full bg-blue-300 border-blue-300 border text-white hover:bg-blue-900"
-            name="Cancel"
-          />
+          <Button color="w-full bg-blue-300 border-blue-300 border text-white hover:bg-blue-900" name="Cancel" />
         </div>
         <div @click="save" class="text-center">
-          <Button
-            color="w-full bg-blue-800 border-blue-800 border text-white hover:bg-blue-900"
-            name="Save"
-          />
+          <Button color="w-full bg-blue-800 border-blue-800 border text-white hover:bg-blue-900" name="Save" />
         </div>
       </div>
     </template>
