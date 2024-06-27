@@ -5,7 +5,9 @@
     >
       <div class="flex justify-between w-full">
         <p class="text-xl font-semibold gradient-text">Bio</p>
-        <Edit class="cursor-pointer hover:stroke-blue-800" size="20" />
+        <div @click="editBio">
+          <Edit class="cursor-pointer hover:stroke-blue-800" size="20" />
+        </div>
       </div>
       <div class="flex mt-4 gap-x-4">
         <p class="italic">
@@ -28,6 +30,11 @@ export default {
   name: "Bio",
   components: {
     Edit,
+  },
+  methods: {
+    editBio() {
+      this.$store.dispatch("modal/openModal", { overlay: "EDIT_BIO" });
+    },
   },
 };
 </script>
