@@ -1,32 +1,48 @@
 <template>
   <div :class="`min-w-[440px] ${customClass}`">
-    <!-- <div>
-      <img v-if="imgSrc" :src="imgSrc" alt="image" class="mx-auto" />
-      <slot v-else name="svg"></slot>
-    </div> -->
-    <div class="flex py-6 bg-gray-300">
-      <p v-if="title" class="text-lg font-poppins text-blue-800 font-bold w-fit mx-auto">
+    <div class="py-4">
+      <p
+        v-if="title"
+        class="mx-auto text-xl font-bold font-poppins text-grey900 w-fit"
+      >
         {{ title }}
       </p>
-      <div v-if="closeBtn">
-        <Close class="cursor-pointer hover:stroke-blue-800" size="20" />
-      </div>
+      <p
+        v-if="text"
+        class="mx-auto mt-4 text-lg font-openSans text-grey800 w-fit"
+      >
+        {{ text }}
+      </p>
     </div>
-    <p v-if="text" class="mx-auto mt-4 text-base text-blue-800 w-fit">
-      {{ text }}
-    </p>
-    <slot name="actions"></slot>
-    <div class="mx-auto">
+    <div
+      v-if="errors"
+      class="error-container mt-8 max-h-[150px] overflow-y-auto"
+    >
+      <span
+        v-for="(error, index) in errors"
+        :key="index + error"
+        class="block text-base font-openSans text-grey800"
+      >
+        {{ error }}</span
+      >
+    </div>
+
+    <div class="border-t border-b">
+      <slot name="actions"></slot>
+    </div>
+
+    <div class="px-4 pt-4 pb-4 mx-auto">
       <slot name="buttons"></slot>
     </div>
 
     <slot name="footer"></slot>
   </div>
 </template>
+
 <script>
-import Close from "@/assets/icons/Close";
 export default {
   name: "ModalLayout",
+  components: {},
   props: {
     title: {
       type: String,
@@ -36,24 +52,33 @@ export default {
       type: String,
       required: false,
     },
+    errors: {
+      type: Array,
+      required: false,
+      default: null,
+    },
     customClass: {
       type: String,
       required: false,
       default: "",
     },
-    imgSrc: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    closeBtn: {
-      type: Boolean,
-      required: false,
-    },
-  },
-  components: {
-    Close,
   },
 };
 </script>
-<style lang=""></style>
+
+<style scoped>
+.error-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.error-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 13px;
+}
+
+.error-container::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  transition: background-color linear 300ms;
+  border-radius: 13px;
+}
+</style>

@@ -1,48 +1,87 @@
 <template>
   <transition name="modal">
-    <div v-if="opened" class="overlay-wrapper">
-      <div :class="customClass" class="custom-overlay">
-        <component :is="currentOverlayComponent" :propData="currentProperties" />
-      </div>
-    </div>
+    <modal-wrapper v-if="opened">
+      <component
+        :is="currentOverlayComponent"
+        v-if="isOverlayComponentLoaded"
+        :prop-data="currentProperties"
+      />
+      <spinner v-else />
+    </modal-wrapper>
   </transition>
 </template>
+
 <script>
 import { mapGetters } from "vuex";
-import SuccessLoginModal from "./modals/SuccessLoginModal";
-import SuccessRegistrationModal from "./modals/SuccessRegistrationModal";
-import EditBio from "./modals/EditBio";
+import ModalWrapper from "@/components/ModalWrapper";
+// import SuccessLoginModal from "./modals/SuccessLoginModal";
+// import SuccessRegistrationModal from "./modals/SuccessRegistrationModal";
+// import EditBio from "./modals/EditBio";
 
 const overlayList = {
-  SUCCESS_LOGIN: SuccessLoginModal,
-  SUCCESS_REGISTRATION: SuccessRegistrationModal,
-  EDIT_BIO: EditBio,
+  SUCCESS_LOGIN: () => import("./modals/SuccessLoginModal"),
+  SUCCESS_REGISTRATION: () => import("./modals/SuccessRegistrationModal"),
+  EDIT_BIO: () => import("./modals/EditBio"),
 };
+
 export default {
-  name: "Modal",
+  name: "ModalV2",
+  components: {
+    ModalWrapper,
+  },
   props: {
     opened: {
       type: Boolean,
       default: false,
     },
   },
+  data() {
+    return {
+      isOverlayComponentLoaded: false,
+    };
+  },
   computed: {
     ...mapGetters({
-      modalOpened: "modal/modalOpened",
       currentOverlay: "modal/currentOverlay",
-      currentProperties: "modal/currentProp",
+      currentProperties: "modal/currentProps",
     }),
     currentOverlayComponent() {
       return overlayList[this.currentOverlay];
     },
-    customClass() {
-      return this.currentProperties?.customClass ?? "";
+  },
+  watch: {
+    currentOverlay(newVal) {
+      if (newVal) {
+        this.$nextTick(() => this.loadOverlayComponent());
+      } else {
+        this.isOverlayComponentLoaded = false;
+      }
+    },
+  },
+  methods: {
+    loadOverlayComponent() {
+      // loading component from overlayList
+      const componentToLoad = this.currentOverlayComponent;
+      if (componentToLoad) {
+        componentToLoad()
+          .then(() => {
+            this.isOverlayComponentLoaded = true;
+          })
+          .catch((error) => {
+            console.error("Error loading component", error);
+          });
+      }
     },
   },
 };
 </script>
+
 <style scoped>
 .modal-enter-active {
+  animation: fadeIn 0.5s;
+}
+
+.modal-leave-active {
   animation: fadeOut 0.3s;
 }
 
@@ -50,7 +89,6 @@ export default {
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -60,37 +98,8 @@ export default {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
-}
-
-.overlay-wrapper {
-  background-color: rgba(30, 64, 175, 0.5);
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10040;
-  backdrop-filter: blur(5px);
-}
-
-.custom-overlay {
-  overflow: hidden;
-  width: fit-content;
-  box-shadow: 0px 0px 5px 0px #00000026;
-  background-color: #fff;
-  height: auto;
-  min-height: 150px;
-  /* padding: 60px 52px 60px 60px; */
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 90%;
-  /* overflow-y: scroll; */
 }
 </style>

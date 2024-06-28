@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import userAuth from './modules/user'
 import modal from './modules/modal'
 
 export default new Vuex.Store({
@@ -15,6 +16,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    userAuth,
     modal
   }
 })
